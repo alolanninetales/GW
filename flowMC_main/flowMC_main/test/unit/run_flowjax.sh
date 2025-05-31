@@ -15,6 +15,7 @@ conda activate flowmc
 
 cd /home/hguo/gw_project/flowMC
 
-python -m src.flowMC.resource.nf_model.test_flowjax
+# python -m src.flowMC.resource.nf_model.test_flowjax
+python -m test.unit.test_multi_flowjax
 # cd ~/gw_project/flowMC/src/flowMC/resource/nf_model
 # python test_flowjax.py
