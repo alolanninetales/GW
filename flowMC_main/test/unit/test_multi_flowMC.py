@@ -172,4 +172,3 @@ print("{:<20} {:<10}".format('Model', 'KL Divergence'))
 print("-" * 30)
 for model_name, result in results.items():
     print("{:<20} {:<10.4f}".format(model_name, result["kl"]))
-

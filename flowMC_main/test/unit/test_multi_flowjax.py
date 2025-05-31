@@ -32,7 +32,7 @@ def generate_gmm(n_samples, n_dimensions, n_components=4):
 
 # data = generate_gmm(n_samples=10000, n_dimensions=4, n_components=5)
 # Load data
-data = jnp.array(make_moons(n_samples=100000, noise=0.05)[0])
+data = jnp.array(make_moons(n_samples=10000, noise=0.05)[0])
 
 # Model parameters
 n_feature = 2  # Set to desired dimension
@@ -116,12 +116,12 @@ for model_name, config in models.items():
         optimizer,
         state,
         num_epochs=100,
-        batch_size=10000
+        batch_size=100
     )
     
     # Generate samples
     sample_key = jax.random.fold_in(key, 0)
-    samples = trained_model.sample(sample_key, 10000)
+    samples = trained_model.sample(sample_key, 1000)
     
     # Calculate KL divergence
     kl_value = compute_model_kl(data, samples, trained_model)
@@ -176,4 +176,3 @@ print("{:<25} {:<10}".format('Model', 'KL Divergence'))
 print("-" * 35)
 for model_name, result in results.items():
     print("{:<25} {:<10.4f}".format(model_name, result["kl"]))
-

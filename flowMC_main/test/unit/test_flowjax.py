@@ -127,6 +127,3 @@ plt.ylim(y_min, y_max)
 
 plt.savefig("nf_moons_comparison.png", dpi=300, bbox_inches='tight')
 plt.show()
-
-
-
